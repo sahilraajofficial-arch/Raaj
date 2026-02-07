@@ -1,51 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sahil Furniture - Premium Custom Interiors</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              gold: {
-                50: '#fbf7eb',
-                100: '#f5ebd1',
-                200: '#ebd5a3',
-                300: '#dfba70',
-                400: '#d4a144',
-                500: '#ca8a2e',
-                600: '#ae6d22',
-                700: '#8c4e1d',
-                800: '#733f1d',
-                900: '#60351b',
-              }
-            }
-          }
-        }
-      }
-    </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahil Furniture – Premium Custom Interiors</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  color: #333;
 }
-</script>
-<link rel="stylesheet" href="/index.css">
+
+/* HERO */
+.hero {
+  background: url("assets/hero.jpg") center/cover no-repeat;
+  height: 90vh;
+  color: white;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav h2 { margin: 0; }
+.nav button {
+  background: #7a4a2e;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+}
+.hero-text {
+  margin-top: 120px;
+  max-width: 600px;
+}
+.hero-text h1 {
+  font-size: 40px;
+}
+.hero-text button {
+  margin-right: 10px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+.primary { background: #7a4a2e; color: white; }
+.secondary { background: #25D366; color: white; }
+
+/* TABS */
+.tabs {
+  padding: 40px 20px;
+  background: #fff;
+}
+.tab-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tab-buttons button {
+  margin: 5px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+.tab-buttons button.active {
+  background: #7a4a2e;
+  color: white;
+}
+.images {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.images img {
+  width: 320px;
+  border-radius: 15px;
+}
+
+/* CALL BAR */
+.call-bar {
+  background: #7a4a2e;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+.call-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* WHY US */
+.why {
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+}
+.why-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 20px;
+}
+.why-items div {
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+footer a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* WhatsApp floating */
+.whatsapp {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+}
+</style>
 </head>
-  <body class="bg-stone-50 text-stone-900 antialiased">
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="nav">
+      <h2>SAHIL FURNITURE</h2>
+      <button>Book Now</button>
+    </div>
+
+    <div class="hero-text">
+      <p>CRAFTING ELEGANCE SINCE 2014</p>
+      <h1>Premium Custom Furniture for Modern Homes</h1>
+      <button class="primary">Book Free Consultation</button>
+      <button class="secondary">WhatsApp Chat</button>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="tabs">
+  <div class="tab-buttons">
+    <button class="active" onclick="showImages('bedroom')">Bedroom</button>
+    <button onclick="showImages('kitchen')">Kitchen</button>
+    <button onclick="showImages('living')">Living Room</button>
+    <button onclick="showImages('wardrobe')">Wardrobe</button>
+  </div>
+
+  <div class="images" id="gallery"></div>
+</section>
+
+<div class="call-bar">
+  📞 <a href="tel:+919117377527">+91 9117377527</a>
+</div>
+
+<!-- WHY -->
+<section class="why">
+  <h2>Why Choose Sahil Furniture?</h2>
+  <div class="why-items">
+    <div>10 Years Warranty</div>
+    <div>EMI Options</div>
+    <div>Quality Checked</div>
+    <div>On-Time Delivery</div>
+  </div>
+</section>
+
+<footer>
+  <p>Connect with us</p>
+  <a href="#">Instagram</a>
+  <a href="#">Facebook</a>
+  <a href="https://wa.me/919117377527">WhatsApp</a>
+  <a href="mailto:example@gmail.com">Gmail</a>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919117377527">💬</a>
+
+<script>
+const data = {
+  bedroom: ["assets/bedroom1.jpg", "assets/bedroom2.jpg"],
+  kitchen: ["assets/kitchen1.jpg", "assets/kitchen2.jpg"],
+  living: ["assets/living1.jpg", "assets/living2.jpg"],
+  wardrobe: ["assets/wardrobe1.jpg", "assets/wardrobe2.jpg"]
+};
+
+function showImages(type) {
+  document.querySelectorAll(".tab-buttons button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
+  data[type].forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    gallery.appendChild(img);
+  });
+}
+
+showImages("bedroom");
+</script>
+
 </body>
 </html>
