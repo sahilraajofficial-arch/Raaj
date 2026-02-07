@@ -1,209 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sahil Furniture – Premium Custom Interiors</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#f7f4ef;
-  --brown:#6b3e2e;
-  --accent:#9c4a2f;
-  --text:#2b2b2b;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Inter,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-h1,h2,h3{font-family:"Playfair Display",serif}
-.container{width:90%;max-width:1100px;margin:auto}
-
-/* HEADER */
-header{
-  position:fixed;top:0;width:100%;z-index:10;
-  background:#e9e3db;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 20px;
-}
-header h3{color:var(--brown)}
-header button{
-  background:var(--brown);color:#fff;
-  border:none;border-radius:30px;
-  padding:10px 22px;font-weight:600;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-    url("https://drive.google.com/uc?id=1yMnhXexJd77rMPOw7el-BGox5uBoP9Dh")
-    center/cover no-repeat;
-  display:flex;align-items:center;
-}
-.hero-content{
-  text-align:center;color:#fff;width:100%;
-}
-.hero-content span{letter-spacing:4px;font-size:13px}
-.hero-content h1{
-  font-size:42px;margin:20px 0;
-}
-.btn{
-  display:block;margin:12px auto;
-  padding:16px 28px;
-  border-radius:40px;
-  border:none;
-  font-size:16px;
-}
-.primary{background:var(--brown);color:#fff}
-.whatsapp{background:rgba(255,255,255,.25);color:#fff}
-
-/* SECTION */
-section{padding:80px 0}
-
-/* TABS */
-.tabs{text-align:center;margin-bottom:30px}
-.tabs button{
-  border:1px solid #ddd;background:#fff;
-  padding:10px 18px;border-radius:25px;
-  margin:6px;font-weight:500;
-}
-.tabs .active{background:var(--accent);color:#fff}
-.images{display:none;gap:20px}
-.images.active{display:grid;grid-template-columns:1fr 1fr}
-.images img{
-  width:100%;border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-/* WHY */
-.why{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:30px;text-align:center;
-}
-.circle{
-  width:90px;height:90px;border-radius:50%;
-  background:#f3eee8;margin:auto;
-  display:flex;align-items:center;justify-content:center;
-  font-size:30px;color:var(--accent)
-}
-
-/* PROCESS */
-.process .card{
-  background:#fff;border-radius:20px;
-  padding:24px;margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-/* TESTIMONIAL */
-.testimonials{
-  display:grid;grid-template-columns:1fr 1fr;gap:20px
-}
-.testimonial{
-  background:#f8f5f0;padding:22px;border-radius:18px
-}
-
-/* CTA */
-.cta{
-  background:linear-gradient(120deg,#3b2b23,#000);
-  color:#fff;text-align:center;padding:80px 20px
-}
-.cta button{background:#25d366;color:#fff}
-
-/* FOOTER */
-.footer{text-align:center;padding:30px 0;font-size:14px}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h3>SAHIL FURNITURE</h3>
-  <button>Book Now</button>
-</header>
-
-<div class="hero">
-  <div class="hero-content">
-    <span>CRAFTING ELEGANCE SINCE 2014</span>
-    <h1>Premium Custom Furniture for Modern Homes</h1>
-    <button class="btn primary">Book Free Consultation</button>
-    <button class="btn whatsapp">WhatsApp Chat</button>
-  </div>
-</div>
-
-<section class="container">
-  <h2 style="text-align:center">Our Services</h2>
-
-  <div class="tabs">
-    <button class="active" onclick="show('bed')">Bedroom</button>
-    <button onclick="show('kit')">Kitchen</button>
-    <button onclick="show('ward')">Wardrobe</button>
-    <button onclick="show('liv')">Living Room</button>
-  </div>
-
-  <div id="bed" class="images active">
-    <img src="https://drive.google.com/uc?id=1BaBdJ6oBEOkByrKURYltiXNAr4b79KmM">
-    <img src="https://drive.google.com/uc?id=10N_gmMn8UiuhsMYDsqA7wl3pXQhCRPdo">
-  </div>
-
-  <div id="kit" class="images">
-    <img src="https://drive.google.com/uc?id=1-oOMH3PvHMJZMc-QwV-P1Mn63vH3q5A7">
-    <img src="https://drive.google.com/uc?id=1T2n_UjqXPRCS_WRlZ2a0MqSKuVtEKmUK">
-  </div>
-
-  <div id="ward" class="images">
-    <img src="https://drive.google.com/uc?id=11cIOhpgkLqrJwa4sndjty0uJpVBkN9iL">
-    <img src="https://drive.google.com/uc?id=1OdFcaY89MFFHqwT_5MU0EMjL8hvVwjQ-">
-  </div>
-
-  <div id="liv" class="images">
-    <img src="https://drive.google.com/uc?id=1O5vw0QhwiKjhpVhT7FDQKuAbbP3wvvSq">
-    <img src="https://drive.google.com/uc?id=1QnVJhfHW5JnPeT7-ShSi8IIhHWFx81Cj">
-  </div>
-</section>
-
-<section class="container">
-  <h2 style="text-align:center">Why Choose Sahil Furniture?</h2>
-  <div class="why">
-    <div><div class="circle">✔</div>10 Years Warranty</div>
-    <div><div class="circle">₹</div>EMI Options</div>
-    <div><div class="circle">✓</div>Quality Checked</div>
-    <div><div class="circle">⏰</div>On-Time Delivery</div>
-    <div><div class="circle">🎨</div>Expert Designers</div>
-  </div>
-</section>
-
-<section class="container process">
-  <h2 style="text-align:center">Our Working Process</h2>
-  <div class="card">Free Consultation – Requirement & measurement</div>
-  <div class="card">Design & Planning – 2D & 3D visualization</div>
-  <div class="card">Manufacturing – Save up to 40% on margins</div>
-  <div class="card">Installation – Clean & timely handover</div>
-</section>
-
-<div class="cta">
-  <h2>Transform Your Space Today</h2>
-  <button class="btn">Chat on WhatsApp</button>
-</div>
-
-<div class="footer">
-  Beside Prince Desi Baar, Panvel, Akurli, Maharashtra 410206<br>
-  Mon–Sun | 10 AM – 10 PM | +91 9117377527
-</div>
-
-<script>
-function show(id){
-  document.querySelectorAll('.images').forEach(i=>i.classList.remove('active'));
-  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahil Furniture - Premium Custom Interiors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              gold: {
+                50: '#fbf7eb',
+                100: '#f5ebd1',
+                200: '#ebd5a3',
+                300: '#dfba70',
+                400: '#d4a144',
+                500: '#ca8a2e',
+                600: '#ae6d22',
+                700: '#8c4e1d',
+                800: '#733f1d',
+                900: '#60351b',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
 }
 </script>
-
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-stone-50 text-stone-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
