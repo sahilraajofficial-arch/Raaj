@@ -3,233 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sahil Furniture – Premium Custom Interiors</title>
+<title>Sahil Furniture </title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f8f8;
-  color: #333;
+:root{
+  --bg:#f6f3ee;
+  --dark:#1e1e1e;
+  --accent:#b89b72;
+  --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#333}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+}
+.book-btn{
+  background:var(--accent);
+  padding:10px 22px;
+  border-radius:30px;
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* HERO */
-.hero {
-  background: url("assets/hero.jpg") center/cover no-repeat;
-  height: 90vh;
-  color: white;
-  position: relative;
+.hero{
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600') center/cover no-repeat;
+  position:relative;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:rgba(0,0,0,.5);
 }
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
+.hero-content{
+  position:relative;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  padding:20px;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.hero h1{font-family:'Playfair Display',serif;font-size:44px}
+.hero p{font-size:18px;margin:15px 0}
+.hero a{
+  margin:8px;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
 }
-.nav h2 { margin: 0; }
-.nav button {
-  background: #7a4a2e;
-  border: none;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 20px;
-}
-.hero-text {
-  margin-top: 120px;
-  max-width: 600px;
-}
-.hero-text h1 {
-  font-size: 40px;
-}
-.hero-text button {
-  margin-right: 10px;
-  padding: 12px 20px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-}
-.primary { background: #7a4a2e; color: white; }
-.secondary { background: #25D366; color: white; }
+.btn-primary{background:var(--accent);color:#000}
+.btn-outline{border:2px solid #fff;color:#fff}
 
-/* TABS */
-.tabs {
-  padding: 40px 20px;
-  background: #fff;
-}
-.tab-buttons {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.tab-buttons button {
-  margin: 5px;
-  padding: 10px 18px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  background: white;
-  cursor: pointer;
-}
-.tab-buttons button.active {
-  background: #7a4a2e;
-  color: white;
-}
-.images {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.images img {
-  width: 320px;
-  border-radius: 15px;
+/* SECTION */
+.section{padding:80px 20px}
+.section h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  margin-bottom:40px;
 }
 
-/* CALL BAR */
-.call-bar {
-  background: #7a4a2e;
-  color: white;
-  padding: 15px;
-  text-align: center;
+/* SERVICES */
+.service-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
 }
-.call-bar a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+.service-tabs button{
+  padding:10px 22px;
+  border:none;
+  border-radius:30px;
+  background:#e5ded3;
+  font-weight:600;
+  cursor:pointer;
+}
+.service-tabs button.active{background:var(--accent)}
+.service-images{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.service-images img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
 
-/* WHY US */
-.why {
-  padding: 40px 20px;
-  text-align: center;
-  background: #fff;
+/* WHY CHOOSE */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  text-align:center;
 }
-.why-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-  gap: 20px;
+.feature{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
 }
-.why-items div {
-  background: #f3f3f3;
-  padding: 20px;
-  border-radius: 15px;
+.feature i{font-size:28px;color:var(--accent);margin-bottom:15px}
+
+/* PROCESS */
+.process{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.process-card{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+}
+
+/* REVIEWS */
+.review-slider{overflow:hidden}
+.review-track{
+  display:flex;
+  gap:20px;
+  animation:scroll 35s linear infinite;
+}
+@keyframes scroll{
+  0%{transform:translateX(100%)}
+  100%{transform:translateX(-100%)}
+}
+.review{
+  min-width:260px;
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+.review img{
+  width:60px;height:60px;border-radius:50%;
+}
+.stars{color:gold}
+
+/* FINAL CTA */
+.final-cta{
+  background:#1e1e1e;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
 }
 
 /* FOOTER */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 25px;
+footer{
+  background:#111;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
 }
-footer a {
-  color: white;
-  margin: 0 10px;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-/* WhatsApp floating */
-.whatsapp {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 22px;
-  text-decoration: none;
+.social a{
+  color:#fff;
+  margin:0 10px;
+  font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header>
+  <div class="logo">SAHIL FURNITURE <span style="color:#b89b72;">AISHA</span></div>
+  <a href="https://wa.me/919XXXXXXXXX" class="book-btn">Book Now</a>
+</header>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="nav">
-      <h2>SAHIL FURNITURE</h2>
-      <button>Book Now</button>
-    </div>
-
-    <div class="hero-text">
-      <p>CRAFTING ELEGANCE SINCE 2014</p>
-      <h1>Premium Custom Furniture for Modern Homes</h1>
-      <button class="primary">Book Free Consultation</button>
-      <button class="secondary">WhatsApp Chat</button>
-    </div>
+    <h1>Crafting Elegance Since 2014</h1>
+    <p>Premium Custom Furniture for Modern Homes</p>
+    <a href="#" class="btn-primary">Book Free Consultation</a>
+    <a href="https://wa.me/919XXXXXXXXX" class="btn-outline">
+      <i class="fab fa-whatsapp"></i> WhatsApp Chat
+    </a>
   </div>
 </section>
 
-<!-- TABS -->
-<section class="tabs">
-  <div class="tab-buttons">
-    <button class="active" onclick="showImages('bedroom')">Bedroom</button>
-    <button onclick="showImages('kitchen')">Kitchen</button>
-    <button onclick="showImages('living')">Living Room</button>
-    <button onclick="showImages('wardrobe')">Wardrobe</button>
-  </div>
-
-  <div class="images" id="gallery"></div>
-</section>
-
-<div class="call-bar">
-  📞 <a href="tel:+919117377527">+91 9117377527</a>
+<!-- OUR SERVICES -->
+<section class="section">
+<h2>Our Services</h2>
+<div class="service-tabs">
+  <button class="active" onclick="showService('bedroom')">Bedroom</button>
+  <button onclick="showService('kitchen')">Kitchen</button>
+  <button onclick="showService('wardrobe')">Wardrobe</button>
+  <button onclick="showService('modular')">Modular Storage</button>
+  <button onclick="showService('living')">Living Room</button>
 </div>
-
-<!-- WHY -->
-<section class="why">
-  <h2>Why Choose Sahil Furniture?</h2>
-  <div class="why-items">
-    <div>10 Years Warranty</div>
-    <div>EMI Options</div>
-    <div>Quality Checked</div>
-    <div>On-Time Delivery</div>
-  </div>
+<div class="service-images" id="serviceImages"></div>
 </section>
 
+<!-- WHY CHOOSE -->
+<section class="section">
+<h2>Why Choose Sahil Furniture</h2>
+<div class="features">
+  <div class="feature"><i class="fas fa-shield-alt"></i><h3>10 Years Warranty</h3></div>
+  <div class="feature"><i class="fas fa-credit-card"></i><h3>Easy EMI Options</h3></div>
+  <div class="feature"><i class="fas fa-check-circle"></i><h3>Quality Checked</h3></div>
+  <div class="feature"><i class="fas fa-truck"></i><h3>On-Time Delivery</h3></div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+<h2>Our Working Process</h2>
+<div class="process">
+  <div class="process-card"><h3>Free Consultation</h3><p>Requirement & site measurement</p></div>
+  <div class="process-card"><h3>Design & Planning</h3><p>Material, color, 2D & 3D design</p></div>
+  <div class="process-card"><h3>Manufacturing</h3><p><strong>Save up to 40%</strong> with direct manufacturing</p></div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+<h2>Customer Reviews</h2>
+<div class="review-slider">
+<div class="review-track">
+  <div class="review"><img src="https://randomuser.me/api/portraits/men/1.jpg"><div class="stars">★★★★★</div><p>Excellent quality</p></div>
+  <div class="review"><img src="https://randomuser.me/api/portraits/women/2.jpg"><div class="stars">★★★★★</div><p>Luxury finish</p></div>
+  <div class="review"><img src="https://randomuser.me/api/portraits/men/3.jpg"><div class="stars">★★★★★</div><p>On time delivery</p></div>
+  <div class="review"><img src="https://randomuser.me/api/portraits/women/4.jpg"><div class="stars">★★★★★</div><p>Perfect design</p></div>
+  <div class="review"><img src="https://randomuser.me/api/portraits/men/5.jpg"><div class="stars">★★★★★</div><p>Value for money</p></div>
+  <div class="review"><img src="https://randomuser.me/api/portraits/women/6.jpg"><div class="stars">★★★★★</div><p>Highly recommended</p></div>
+</div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+<h2>Transform Your Space Today</h2>
+<p>Book a free consultation with our experts</p><br>
+<a href="https://wa.me/919XXXXXXXXX" class="btn-primary">Chat on WhatsApp</a>
+<a href="#" class="btn-outline">Schedule Visit</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>Connect with us</p>
-  <a href="#">Instagram</a>
-  <a href="#">Facebook</a>
-  <a href="https://wa.me/919117377527">WhatsApp</a>
-  <a href="mailto:example@gmail.com">Gmail</a>
+<p>About Sahil Furniture <br>
+Premium custom furniture with factory-direct pricing.</p>
+<div class="social">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="https://wa.me/919XXXXXXXXX"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:hello@sahilfurniture.in"><i class="fas fa-envelope"></i></a>
+</div>
+<p>© 2026 Sahil Furniture </p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919117377527">💬</a>
-
 <script>
-const data = {
-  bedroom: ["assets/bedroom1.jpg", "assets/bedroom2.jpg"],
-  kitchen: ["assets/kitchen1.jpg", "assets/kitchen2.jpg"],
-  living: ["assets/living1.jpg", "assets/living2.jpg"],
-  wardrobe: ["assets/wardrobe1.jpg", "assets/wardrobe2.jpg"]
+const images={
+bedroom:[
+'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800',
+'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800',
+'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+'https://images.unsplash.com/photo-1618220179428-22790b461013?w=800'
+],
+kitchen:[
+'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800',
+'https://images.unsplash.com/photo-1556912990-dac0f9b0c6f4?w=800',
+'https://images.unsplash.com/photo-1600585154204-6f2d44c62b79?w=800',
+'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800'
+],
+wardrobe:[
+'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800',
+'https://images.unsplash.com/photo-1618220179428-22790b461013?w=800',
+'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800',
+'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'
+],
+modular:[
+'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800',
+'https://images.unsplash.com/photo-1600585154204-6f2d44c62b79?w=800',
+'https://images.unsplash.com/photo-1556912990-dac0f9b0c6f4?w=800',
+'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800'
+],
+living:[
+'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+'https://images.unsplash.com/photo-1618220179428-22790b461013?w=800',
+'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800',
+'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800'
+]
 };
 
-function showImages(type) {
-  document.querySelectorAll(".tab-buttons button").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
-
-  const gallery = document.getElementById("gallery");
-  gallery.innerHTML = "";
-  data[type].forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    gallery.appendChild(img);
+function showService(type){
+  const container=document.getElementById('serviceImages');
+  container.innerHTML='';
+  images[type].forEach(img=>{
+    container.innerHTML+=`<img src="${img}">`;
   });
+  document.querySelectorAll('.service-tabs button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
 }
-
-showImages("bedroom");
+showService('bedroom');
 </script>
 
 </body>
